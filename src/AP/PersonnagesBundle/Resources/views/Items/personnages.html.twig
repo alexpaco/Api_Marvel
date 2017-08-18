@@ -1,0 +1,8 @@
+{% extends 'APPersonnagesBundle::layout.html.twig' %}
+{% block body %}
+    {% for personnage in personnages.data.results %}
+        <p>{{ personnage.name }}</p>
+        <img src="{{ personnage.thumbnail.path }}/portrait_medium.{{ personnage.thumbnail.extension }}" alt="{{ personnage.name }}">
+    {% endfor %}
+    <a href="{{ path('ap_personnages_accueil') }}">Accueil</a>
+{% endblock %}
