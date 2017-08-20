@@ -1,11 +1,7 @@
-ap_personnages_accueil:
-    path:     /
-    defaults: { _controller: APPersonnagesBundle:Affiche:Accueil }
-
 ap_personnages_items:
-    path:    /liste super-héros
+    path:    /
     defaults: { _controller: APPersonnagesBundle:Affiche:Items }
 
 ap_personnages_details:
     path:    /{id}
-    defaults: { _controller: APPersonnagesBundle:Affiche:Details }
+    defaults: { _controller: APPersonnagesBundle:Details:Details }
