@@ -1,0 +1,20 @@
+{% extends 'APPersonnagesBundle::layout.html.twig' %}
+{% block title %}
+    {{ parent() }} - Détails {{ personnage.data.results[0].name }}
+{% endblock %}
+{% block body %}
+	<a href="{{ path('ap_personnages_items') }}">Retour</a>
+	<div style="text-align: center;">
+		<p>{{ personnage.data.results[0].name }}</p>
+		<img src="{{ personnage.data.results[0].thumbnail.path }}/standard_xlarge.{{ personnage.data.results[0].thumbnail.extension }}" alt="{{ personnage.data.results[0].name }}">
+		<p>{{ (personnage.data.results[0].description is  not empty) ? 'Description : ' }}</p>
+		<p>{{ (personnage.data.results[0].description is empty) ? 'Pas de description' : personnage.data.results[0].description }}</p>
+		<p>Nombre d'apparition dans des comics : <br>{{ personnage.data.results[0].comics.available }}</p>
+    	<p>
+    	{{ (personnage.data.results[0].comics.available == 0) ? "Le personnage n'est apparût dans aucun comic" : 'Nom des 3 premiers comics :' }} <br>
+
+    	{% for comic in personnage.data.results[0].comics.items|slice(0, 3) %}
+    		{{ comic.name }}<br>
+    	{% endfor %}</p>
+	</div>
+{% endblock %}

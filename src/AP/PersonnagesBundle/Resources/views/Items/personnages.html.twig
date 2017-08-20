@@ -1,8 +1,41 @@
 {% extends 'APPersonnagesBundle::layout.html.twig' %}
+{% block title %}
+    {{ parent() }} - Affichage des personnages
+{% endblock %}
 {% block body %}
-    {% for personnage in personnages.data.results %}
-        <p>{{ personnage.name }}</p>
-        <img src="{{ personnage.thumbnail.path }}/portrait_medium.{{ personnage.thumbnail.extension }}" alt="{{ personnage.name }}">
-    {% endfor %}
     <a href="{{ path('ap_personnages_accueil') }}">Accueil</a>
+	<div class="container-fluid" style="position: relative;">
+		<article class="col-sm-12">
+		    {% for key , personnage in personnages.data.results %}
+		    	<article class="col-sm-3 item{{ key }}">
+			        <img src="{{ personnage.thumbnail.path }}/standard_large.{{ personnage.thumbnail.extension }}" alt="{{ personnage.name }}" class="img-circle">
+			        <a href="{{ path('ap_personnages_details', {'id': personnage.id}) }}">{{ personnage.name }}</a>
+		        </article>
+		    {% endfor %}
+    	</article>
+    </div>
+    <div class="description" style="text-align: center; display: none; position: absolute; background-color: grey; left: 50%; top: 50%; transform: translate(-50%,-50%); position: fixed">
+    	{{ personnages.data.results[2].name }}</p>
+    	<img src="{{ personnages.data.results[2].thumbnail.path }}/standard_large.{{ personnages.data.results[2].thumbnail.extension }}" alt="{{ personnages.data.results[2].name }}">
+    	<p>Description : <br>{{ personnages.data.results[2].description }}</p>
+    	<p>Nombre d'apparition dans des comics : <br>{{ personnages.data.results[2].comics.available }}</p>
+    	<p>Nom des 3 premiers comics : <br>
+    	{% for comic in personnages.data.results[2].comics.items|slice(0, 3) %}
+    	    {{ comic.name }}<br>
+    	{% endfor %}</p>
+    </div>
+{% endblock %}
+{% block javascripts %}
+     <script>
+
+  //   	$(document).ready(function(){
+
+	 //    		for (var i = 0; i < 20; i++) {
+		//     		$(".nom" + i).click(function(){
+		//         	$(".description").css({'display': 'block'});
+  //   		});
+  //   		}
+		// });
+
+     </script>
 {% endblock %}
