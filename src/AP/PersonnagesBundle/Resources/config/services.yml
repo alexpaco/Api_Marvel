@@ -1,4 +1,10 @@
+parameters:
+    publicKey: '1577457f3589885adafd0320c0830897'
+    privateKey: '5792bfaf981b65942017f8c801d117e8ed795118'
+
 services:
-#    ap_personnages.example:
-#        class: AP\PersonnagesBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    personnages:
+        class: AP\PersonnagesBundle\Services\Personnages
+
+    personnage:
+        class: AP\PersonnagesBundle\Services\Personnage
