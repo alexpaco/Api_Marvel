@@ -3,7 +3,7 @@
     {{ parent() }} - Détails {{ personnage.data.results[0].name }}
 {% endblock %}
 {% block body %}
-	<a href="{{ path('ap_personnages_items') }}">{{ 'items.button.return'|trans({}, 'personnages') }}</a>
+	<a href="{{ path('ap_personnages_items', {'page': 1}) }}">{{ 'items.button.return'|trans({}, 'personnages') }}</a>
 	<div style="text-align: center;">
 		<p>{{ personnage.data.results[0].name }}</p>
 		<img src="{{ personnage.data.results[0].thumbnail.path }}/standard_xlarge.{{ personnage.data.results[0].thumbnail.extension }}" alt="{{ personnage.data.results[0].name }}">

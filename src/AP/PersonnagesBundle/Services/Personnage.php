@@ -15,7 +15,7 @@ class Personnage
 		
 		$md5 = hash('md5', $string);
 		
-		$details = curl_init("http://gateway.marvel.com:80/v1/public/characters/$id?offset=100&limit=20&ts=$timestamp&apikey=$publicKey&hash=$md5");
+		$details = curl_init("http://gateway.marvel.com:80/v1/public/characters/$id?ts=$timestamp&apikey=$publicKey&hash=$md5");
 		
 		curl_setopt($details, CURLOPT_HEADER, 0);
 		curl_setopt($details, CURLOPT_RETURNTRANSFER, true);
