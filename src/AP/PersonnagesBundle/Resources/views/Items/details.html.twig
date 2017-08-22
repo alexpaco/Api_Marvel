@@ -3,17 +3,20 @@
     {{ parent() }} - Détails {{ personnage.data.results[0].name }}
 {% endblock %}
 {% block body %}
-	<a href="{{ path('ap_personnages_items') }}">Retour</a>
+	<a href="{{ path('ap_personnages_items') }}">{{ 'items.button.return'|trans({}, 'personnages') }}</a>
 	<div style="text-align: center;">
 		<p>{{ personnage.data.results[0].name }}</p>
 		<img src="{{ personnage.data.results[0].thumbnail.path }}/standard_xlarge.{{ personnage.data.results[0].thumbnail.extension }}" alt="{{ personnage.data.results[0].name }}">
-		<p>{{ (personnage.data.results[0].description is  not empty) ? 'Description : ' }}</p>
-		<p>{{ (personnage.data.results[0].description is empty) ? 'Pas de description' : personnage.data.results[0].description }}</p>
-		<p>Nombre d'apparition dans des comics : <br>{{ personnage.data.results[0].comics.available }}</p>
+		{% if personnage.data.results[0].description is not empty %}
+			<p>{{ 'items.details.description'|trans({}, 'personnages') }}<br>
+			{{ personnage.data.results[0].description }}</p>
+		{% else %}
+			 <p>{{ 'items.details.noDescription'|trans({}, 'personnages') }}</p>   
+		{% endif %}
+		<p>{{ 'items.details.apparition'|trans({'%number%': personnage.data.results[0].comics.available}, 'personnages') }}</p>
     	<p>
-    	{{ (personnage.data.results[0].comics.available == 0) ? "Le personnage n'est apparût dans aucun comic" : 'Nom des 3 premiers comics :' }} <br>
-
-    	{% for comic in personnage.data.results[0].comics.items|slice(0, 3) %}
+    	{{ (personnage.data.results[0].comics.available == 0) ? 'items.details.noApparition'|trans({}, 'personnages') : 'items.details.title.comics'|trans({}, 'personnages') }}<br>
+		{% for comic in personnage.data.results[0].comics.items|slice(0, 3) %}
     		{{ comic.name }}<br>
     	{% endfor %}</p>
 	</div>

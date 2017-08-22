@@ -1,0 +1,10 @@
+items:
+  button:
+    return: Retour
+  details:
+    description: 'Description : '
+    noDescription: Pas de description
+    apparition: "Nombre d'apparition dans des comics : %number%"
+    noApparition: "Le personnage n'apparait dans aucun comics"
+    title:
+      comics: 'Nom des 3 premièrs comics :'
