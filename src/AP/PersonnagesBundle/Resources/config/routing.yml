@@ -1,6 +1,6 @@
 ap_personnages_items:
     path:    /{page}
-    defaults: { _controller: APPersonnagesBundle:Affiche:Items }
+    defaults: { _controller: APPersonnagesBundle:Affiche:Items, page: 1 }
 
 ap_personnages_details:
     path:    /details/{id}
