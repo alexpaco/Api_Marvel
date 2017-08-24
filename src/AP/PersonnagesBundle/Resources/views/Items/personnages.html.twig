@@ -20,7 +20,7 @@
 			    		<a href="{{ path('ap_personnages_items', {'page': page - 1}) }}"> < </a>
 			    	</li>
 			  	{% endif %}
-				{% for p in range(max(page - 4, 1), min(page + 4, nbPages)) %}
+				{% for p in range(max(page - 3, 1), min(page + 3, nbPages)) %}
 					<li {% if p == page %} class="active"{% endif %}>
 				    	<a href="{{ path('ap_personnages_items', {'page': p}) }}">{{ p }}</a>
 				    </li>
