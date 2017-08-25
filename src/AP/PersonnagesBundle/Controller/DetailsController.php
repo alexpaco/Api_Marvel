@@ -10,7 +10,9 @@ class DetailsController extends Controller
 	{
 		$personnage = $this->container->get('personnage');
 
+		$details = $personnage->details($id)->data->results[0];
+
 		return $this->render("APPersonnagesBundle:Items:details.html.twig", array(
-			'personnage' => $personnage->details($id) ));
+			'personnage' => $details ));
 	}
 }
