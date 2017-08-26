@@ -9,15 +9,13 @@ class AfficheController extends Controller
 {
 	public function ItemsAction($page)
 	{	
-
-		$personnages = $this->container->get('personnages');
-		$Keys = $this->container->get('keys');
-		$pblicKey = $Keys->clePublique();
-		$prvateKey = $Keys->clePrivée();
 		$nbParPage = 20;
 		$offset = ($page-1) * $nbParPage;
 
-		$totalPersonnages = $personnages->affiche($offset, $nbParPage, $pblicKey, $prvateKey)->data->total;
+		$personnages = $this->container->get('personnages');
+		$all = $personnages->all($offset, $nbParPage);
+
+		$totalPersonnages = $all->data->total;
 		$nbPage = ceil($totalPersonnages/$nbParPage);
 
 		if ($page < 1) {
@@ -28,7 +26,7 @@ class AfficheController extends Controller
 	    }
 
 		return $this->render("APPersonnagesBundle:Items:personnages.html.twig", array(
-			'personnages' => $personnages->affiche($offset, $nbParPage, $pblicKey, $prvateKey),
+			'personnages' => $all,
 			'nbPages' => $nbPage,
 			'page' =>$page ));
 	}

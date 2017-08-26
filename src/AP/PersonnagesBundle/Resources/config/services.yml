@@ -1,9 +1,9 @@
 services:
     personnages:
         class: AP\PersonnagesBundle\Services\Personnages
-
-    personnage:
-        class: AP\PersonnagesBundle\Services\Personnage
+        arguments:
+          $publicKey: '%publicKey%'
+          $privateKey: '%privateKey%'
 
     keys:
       class: AP\PersonnagesBundle\Services\Cles

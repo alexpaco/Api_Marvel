@@ -15,4 +15,3 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
-/src/AP/PersonnagesBundle/Services/Cles.php
