@@ -4,6 +4,3 @@ services:
         arguments:
           $publicKey: '%publicKey%'
           $privateKey: '%privateKey%'
-
-    keys:
-      class: AP\PersonnagesBundle\Services\Cles
