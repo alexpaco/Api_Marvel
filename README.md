@@ -1,6 +1,8 @@
 Application utilisant l'API Marvel  
 ==================================
 
+Projet créé par Alexandre Pacoret à partir de l'Api Marvel [marvel.com](https://developer.marvel.com/"marvel.com")
+
 1) Installation de l'application  
    ----------------------------
 
@@ -8,8 +10,7 @@ Pour commencer cloner le projet **https://github.com/alexpaco/Api_Marvel.git**
 
 2) Utilisation de l'application
    ----------------------------
-Pour pouvoir utiliser l'application il vous faudra les clés api de Marvel que vous trouverez après inscription à ce lien <https://developer.marvel.com/>. Une fois les clés obtenues créez le fichier **Cles.php** dans *src/AP/PersonnagesBundles/Services* et mettez le code qui ce trouve dans le lien photo en dessous avec vos clés publique et privée.  
-! [screen Cles.php](web/ServiceKey.PNG "screen Cles.php")  
+Pour pouvoir utiliser l'application il vous faudra les clés api de Marvel que vous trouverez après inscription à ce lien <https://developer.marvel.com/>. Une fois les clés obtenues, mettez dans le fichier **app/config/parameters.yml**. Pour la clé publique mettre publicKey: Votre clé publique et privateKey: Votre clé privée.    
 
 Pour ensuite accéder à l'application, allez dans le dossier de l'application, faire un bin/console serve:run.  
 Copiez le lien donné dans la console et rajoutez /fr/1. Il indique la langue utilisée en occurence le français sans cela l'application de marchera pas. Il y a aussi /en/1 pour l'anglais.  
