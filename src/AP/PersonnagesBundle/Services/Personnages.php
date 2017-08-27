@@ -31,7 +31,7 @@ class Personnages
 		$md5 = hash('md5', $timestamp.$this->privateKey.$this->publicKey);
 
 
-		return json_decode($this->fetch("http://gateway.marvel.com/v1/public/characters/$id?offset=$offset&limit=$nbParPage&ts=$timestamp&apikey=$this->publicKey&hash=$md5"));
+		return json_decode($this->fetch("http://gateway.marvel.com/v1/public/characters/$id?&ts=$timestamp&apikey=$this->publicKey&hash=$md5"));
 	}
 
 	public function fetch($curl)
