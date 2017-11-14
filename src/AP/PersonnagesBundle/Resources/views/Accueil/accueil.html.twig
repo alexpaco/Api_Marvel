@@ -3,5 +3,9 @@
     {{ parent() }} - Accueil
 {% endblock %}
 {% block body %}
-    <div class="img"></div>
+    <div class="img">
+    	<div class="bienvenue"><p>Bienvenue sur ce site, ici vous trouverez tout ce que vous voulez savoir sur l'univers de Marvel. Toutes les données présentes sur ce site sont fournises par l'api Marvel.</p>
+    	<a href="{{ path('ap_personnages_navigation') }}" class="bouton">Accéder au site</a>
+    	</div>
+    </div>
 {% endblock %}

@@ -10,4 +10,9 @@ class AccueilController extends Controller
 	{
 		return $this->render("APPersonnagesBundle:Accueil:accueil.html.twig");
 	}
+
+	public function NavigationAction()
+	{
+		return $this->render("APPersonnagesBundle:Accueil:navigation.html.twig");
+	}
 }

@@ -1,0 +1,12 @@
+{% extends 'APPersonnagesBundle::layout.html.twig' %}
+{% block title %}
+    {{ parent() }} - Navigation
+{% endblock %}
+{% block body %}
+    <div class="img">
+    	<a href="{{ path('ap_personnages_items') }}" class="personnage">Personnages</a>
+    	<a href="" class="serie">Séries</a>
+    	<a href="" class="comic">Comics</a>
+    	<a href="" class="createur">Créateurs</a>
+    </div>
+{% endblock %}
