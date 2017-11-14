@@ -14,7 +14,6 @@ class AfficheController extends Controller
 
 		$personnages = $this->container->get('personnages');
 		$all = $personnages->all($offset, $nbParPage);
-
 		$totalPersonnages = $all->data->total;
 		$nbPage = ceil($totalPersonnages/$nbParPage);
 
