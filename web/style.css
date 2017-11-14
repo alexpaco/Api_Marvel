@@ -33,3 +33,38 @@ html, body{
 	color: #3185AC;
 	text-decoration: none;
 }
+.personnage, .serie, .createur, .comic{
+	text-decoration: none;
+	text-align: center;
+	background-color: rgba(100,100,100,0.7);
+	padding: 1%;
+	color: white;
+	border-radius: 10px;
+}
+.personnage, .serie{
+	margin-top: 15%;
+	margin-bottom: 10%;
+}
+.createur, .comic{
+	margin-top: 10%;
+}
+.personnage:hover{
+	text-decoration: none;
+	background-color: ;
+	color: #53AF3C;
+}
+.serie:hover{
+	text-decoration: none;
+	background-color: ;
+	color: #3185AC;
+}
+.createur:hover{
+	text-decoration: none;
+	background-color: ;
+	color: #FFD300;
+}
+.comic:hover{
+	text-decoration: none;
+	background-color: ;
+	color: #D15EA4;
+}

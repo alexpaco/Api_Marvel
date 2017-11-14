@@ -4,9 +4,11 @@
 {% endblock %}
 {% block body %}
     <div class="img">
-    	<a href="{{ path('ap_personnages_items') }}" class="personnage">Personnages</a>
-    	<a href="" class="serie">Séries</a>
-    	<a href="" class="comic">Comics</a>
-    	<a href="" class="createur">Créateurs</a>
+    	<div class="container-fluid">
+	    	<a href="{{ path('ap_personnages_items') }}" class="personnage col-sm-2 col-sm-offset-3">Personnages</a>
+	    	<a href="" class="serie col-sm-2 col-sm-offset-2">Séries</a>
+	    	<a href="" class="comic col-sm-2 col-sm-offset-3">Comics</a>
+	    	<a href="" class="createur col-sm-2 col-sm-offset-2">Créateurs</a>
+	    </div>
     </div>
 {% endblock %}
