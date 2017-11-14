@@ -1,10 +1,12 @@
 ap_personnages_accueil:
     path:    /
     defaults: { _controller: APPersonnagesBundle:Accueil:Accueil }
+ap_personnages_navigation:
+    path:    /navigation
+    defaults: { _controller: APPersonnagesBundle:Accueil:Navigation }
 ap_personnages_items:
     path:    /personnages/{page}
     defaults: { _controller: APPersonnagesBundle:Affiche:Items, page: 1 }
-
-ap_personnages_details:
-    path:    /details/{id}
+ap_personnages_details_personnages:
+    path:    /personnages/details/{id}
     defaults: { _controller: APPersonnagesBundle:Details:Details }
