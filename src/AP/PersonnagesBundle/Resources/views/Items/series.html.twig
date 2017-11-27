@@ -1,0 +1,39 @@
+{% extends 'APPersonnagesBundle::layout.html.twig' %}
+{% block title %}
+	{{ parent() }} - Séries    
+{% endblock %}
+{% block body %}
+     <article class="container-fluid">
+     	<div class="col-sm-12">
+     		{% for serie in series.data.results %}
+     		    <article class="col-sm-3" style="text-align:center; margin-bottom: 2.5%; margin-top: 2.5%">
+			        <img src="{{ serie.thumbnail.path }}/standard_large.{{ serie.thumbnail.extension }}" alt="{{ serie.title }}" class="img-circle"><br>
+			        <a href="{{ path('ap_series_details_serie', {'id': serie.id}) }}">{{ serie.title }} </a>
+		        </article>
+     		{% endfor %}
+     		<ul class="pagination">
+			    {% if page > 1 %}
+			    	<li>
+			    		<a href="{{ path('ap_personnages_series', {'page': 1}) }}"> << </a>
+			    	</li>
+			    	<li>
+			    		<a href="{{ path('ap_personnages_series', {'page': page - 1}) }}"> < </a>
+			    	</li>
+			  	{% endif %}
+				{% for p in range(max(page - 3, 1), min(page + 3, nbPages)) %}
+					<li {% if p == page %} class="active"{% endif %}>
+				    	<a href="{{ path('ap_personnages_series', {'page': p}) }}">{{ p }}</a>
+				    </li>
+				{% endfor %}
+				{% if page < nbPages %}
+					<li>
+				    	<a href="{{ path('ap_personnages_series', {'page': page + 1}) }}"> > </a>
+				    </li>
+				    <li>
+				   		<a href="{{ path('ap_personnages_series', {'page': nbPages}) }}"> >> </a>
+				   	</li>
+				{% endif %}
+			</ul>
+     	</div>
+     </article>
+{% endblock %}

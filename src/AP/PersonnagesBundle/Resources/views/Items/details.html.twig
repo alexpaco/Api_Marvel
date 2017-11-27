@@ -1,6 +1,6 @@
 {% extends 'APPersonnagesBundle::layout.html.twig' %}
 {% block title %}
-    {{ parent() }} - Détails {{ personnage.name }}
+    {{ parent() }} - {{ personnage.name }}
 {% endblock %}
 {% block body %}
 	<a href="{{ path('ap_personnages_items') }}">{{ 'items.button.return'|trans({}, 'personnages') }}</a>

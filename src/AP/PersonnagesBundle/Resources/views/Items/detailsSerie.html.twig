@@ -1,0 +1,25 @@
+{% extends 'APPersonnagesBundle::layout.html.twig' %}
+{% block title %}
+    {{ parent() }} - {{ serie.title }}
+{% endblock %}
+{% block body %}
+    <a href="{{ path('ap_personnages_series') }}">{{ 'items.button.return'|trans({}, 'personnages') }}</a>
+	<div style="text-align: center;">
+		<p>{{ serie.title }}</p>
+		<img src="{{ serie.thumbnail.path }}/standard_xlarge.{{ serie.thumbnail.extension }}" alt="{{ serie.title }}">
+		{% if serie.description is not empty %}
+			<p>{{ 'items.details.description'|trans({}, 'personnages') }}<br>
+			{{ serie.description }}</p>
+		{% else %}
+			 <p>{{ 'items.details.noDescription'|trans({}, 'personnages') }}</p>   
+		{% endif %}
+		<p><h3>{{ (serie.characters.available == 0) ? 'items.details.noCharacters'|trans({}, 'personnages') : 'items.details.title.characters'|trans({}, 'personnages') }}</h3><br>
+		{% for character in serie.characters.items %}
+			{{ character.name }}<br>
+		{% endfor %}</p>
+    	<p><h3>{{ (serie.creators.available == 0) ? 'items.details.noCreator'|trans({}, 'personnages') : 'items.details.title.series'|trans({}, 'personnages') }}</h3><br>
+		{% for creator in serie.creators.items %}
+    		{{ creator.name }} : {{ creator.role }}<br>
+    	{% endfor %}</p>
+	</div>
+{% endblock %}
