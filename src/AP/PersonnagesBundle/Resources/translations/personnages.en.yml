@@ -3,8 +3,12 @@ items:
     return: Return
   details:
     description: 'Description: '
-    noDescription: No description
+    noDescription: 'No description'
     apparition: 'Number of appearances in comics: %number%'
-    noApparition: The character does not appear in any comics
+    noApparition: 'The character does not appear in any comics'
+    noCharacters: 'No characters avaible'
+    noCreator: 'No creator available'
     title:
       comics: 'Name of first 3 comics:'
+      series: 'Creators of the series:'
+      characters: 'Characters of the series:'
