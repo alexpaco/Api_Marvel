@@ -1,6 +1,15 @@
 services:
+    curl:
+        class: AP\PersonnagesBundle\Services\Curl
     personnages:
         class: AP\PersonnagesBundle\Services\Personnages
         arguments:
           $publicKey: '%publicKey%'
           $privateKey: '%privateKey%'
+          $curl: '@curl'
+    series:
+        class: AP\PersonnagesBundle\Services\Series
+        arguments:
+          $publicKey: '%publicKey%'
+          $privateKey: '%privateKey%'
+          $curl: '@curl'
