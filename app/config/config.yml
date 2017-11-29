@@ -8,10 +8,6 @@ imports:
 parameters:
     locale: fr
 
-rules:
-    symfony.obvious_csrf_key:
-        enable: true
-
 services:
     twig.extension.intl:
         class: Twig_Extensions_Extension_Intl
