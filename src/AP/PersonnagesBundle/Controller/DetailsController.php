@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DetailsController extends Controller
 {
-	public function PersonnageAction($id)
+	public function personnageAction($id)
 	{
 		$personnage = $this->container->get('personnages');
 
@@ -16,14 +16,11 @@ class DetailsController extends Controller
 			'personnage' => $details ));
 	}
 
-	public function SerieAction($id)
+	public function serieAction($id)
 	{
 		$serie = $this->container->get('series');
 
 		$details = $serie->one($id)->data->results[0];
-
-		// dump($details);
-		// die;
 
 		return $this->render("APPersonnagesBundle:Items:detailsSerie.html.twig", array(
 			'serie' => $details ));

@@ -7,7 +7,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class AfficheController extends Controller
 {
-	public function PersonnagesAction($page)
+	public function personnagesAction($page)
 	{	
 		$nbParPage = 20;
 		$offset = ($page-1) * $nbParPage;
@@ -30,7 +30,7 @@ class AfficheController extends Controller
 			'page' =>$page ));
 	}
 
-	public function SeriesAction($page)
+	public function seriesAction($page)
 	{
 		$nbParPage = 20;
 		$offset = ($page-1) * $nbParPage;
@@ -39,9 +39,6 @@ class AfficheController extends Controller
 		$all = $series->all($offset, $nbParPage);
 		$totalSeries = $all->data->total;
 		$nbPage = ceil($totalSeries/$nbParPage);
-
-		// dump($all);
-		// die;
 
 		if ($page < 1) {
       		throw new NotFoundHttpException('Page "'.$page.'" inexistante.');

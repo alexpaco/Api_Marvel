@@ -1,18 +1,18 @@
 ap_personnages_accueil:
     path:    /
-    defaults: { _controller: APPersonnagesBundle:Accueil:Accueil }
+    defaults: { _controller: APPersonnagesBundle:Accueil:accueil }
 ap_personnages_navigation:
     path:    /navigation
-    defaults: { _controller: APPersonnagesBundle:Accueil:Navigation }
+    defaults: { _controller: APPersonnagesBundle:Accueil:navigation }
 ap_personnages_items:
     path:    /personnages/{page}
-    defaults: { _controller: APPersonnagesBundle:Affiche:Personnages, page: 1 }
+    defaults: { _controller: APPersonnagesBundle:Affiche:personnages, page: 1 }
 ap_personnages_details_personnages:
     path:    /personnages/details/{id}
-    defaults: { _controller: APPersonnagesBundle:Details:Personnage }
+    defaults: { _controller: APPersonnagesBundle:Details:personnage }
 ap_personnages_series:
     path:   /series/{page}
-    defaults: { _controller: APPersonnagesBundle:Affiche:Series, page: 1 }
+    defaults: { _controller: APPersonnagesBundle:Affiche:series, page: 1 }
 ap_series_details_serie:
     path:   /series/detail/{id}
-    defaults: { _controller: APPersonnagesBundle:Details:Serie }
+    defaults: { _controller: APPersonnagesBundle:Details:serie }

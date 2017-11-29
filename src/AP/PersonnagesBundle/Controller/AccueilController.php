@@ -6,12 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AccueilController extends Controller
 {
-	public function AccueilAction()
+	public function accueilAction()
 	{
 		return $this->render("APPersonnagesBundle:Accueil:accueil.html.twig");
 	}
 
-	public function NavigationAction()
+	public function navigationAction()
 	{
 		return $this->render("APPersonnagesBundle:Accueil:navigation.html.twig");
 	}
