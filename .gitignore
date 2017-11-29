@@ -1,4 +1,4 @@
-/web/config.php
+'/web/config.php'
 /.web-server-pid
 /app/config/parameters.yml
 /build/
