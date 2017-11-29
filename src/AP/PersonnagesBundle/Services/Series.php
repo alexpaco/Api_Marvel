@@ -31,5 +31,4 @@ class Series
 		return json_decode($this->curl->url("http://gateway.marvel.com/v1/public/series/$id?ts=$timestamp&apikey=$this->publicKey&hash=$md5"));
 	}
 }
- ?>
- 
+?>

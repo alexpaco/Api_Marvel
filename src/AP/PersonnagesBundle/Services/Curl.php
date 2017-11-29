@@ -27,5 +27,4 @@ class Curl
 		return $series;
 	}
 }
- ?>
- 
+?>

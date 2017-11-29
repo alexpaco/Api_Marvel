@@ -33,5 +33,5 @@ class Personnages
 		return json_decode($this->curl->url("http://gateway.marvel.com/v1/public/characters/$id?ts=$timestamp&apikey=$this->publicKey&hash=$md5"));
 	}
 }
- ?>
+?>
  

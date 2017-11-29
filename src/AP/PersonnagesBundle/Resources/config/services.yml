@@ -13,4 +13,3 @@ services:
           $publicKey: '%publicKey%'
           $privateKey: '%privateKey%'
           $curl: '@curl'
-          
